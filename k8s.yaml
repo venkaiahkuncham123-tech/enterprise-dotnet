@@ -18,8 +18,9 @@ spec:
       region: asia
   template:
     metadata:
-      app: front-end
-      region: asia
+      labels:
+        app: front-end
+        region: asia
     spec:
       containers:
         - image: nginx:latest
