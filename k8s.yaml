@@ -26,7 +26,7 @@ spec:
         - image: nginx:latest
           name: nginx-container
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           imagePullPolicy: Always
           restartPolicy: OnFailure
 ---
@@ -71,6 +71,5 @@ spec:
       ports:
         - port: 80
           protocol: TCP
-        - port: 32022
-          protocol: TCP
+
           
