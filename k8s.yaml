@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sample-deploy
+  namespace: test
 spec:
   replicas: 3
   strategy:
@@ -27,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:  
   name: nginx-svc
+  namespace: test
 spec:
   type: NodePort
   selector:
@@ -42,6 +44,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: netpol
+  namespace: test
 spec:
   podSelector: {}
   policyTypes:
@@ -55,6 +58,6 @@ spec:
             matchLabels:
               app: my-app
     - from:
-        ipBlock:
-          cidr: 101.0.63.221/32
+        - ipBlock:
+            cidr: 101.0.63.221/32
           
