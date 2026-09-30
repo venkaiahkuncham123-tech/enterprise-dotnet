@@ -71,4 +71,6 @@ spec:
       ports:
         - port: 80
           protocol: TCP
+        - port: 32022
+          protocol: TCP
           
