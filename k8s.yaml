@@ -65,5 +65,13 @@ spec:
               app: my-app
     - from:
         - ipBlock:
+            cidr: 192.168.1.39/32
+          ports:
+            - port: 80
+              protocol: TCP
+        - ipBlock:
             cidr: 101.0.63.221/32
+          ports:
+            - port: 80
+              protocol: TCP
           
